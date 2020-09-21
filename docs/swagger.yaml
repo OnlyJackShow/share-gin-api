@@ -1,0 +1,40 @@
+info:
+  contact: {}
+  license: {}
+paths:
+  /testapi/get:
+    get:
+      consumes:
+      - application/json
+      description: 方法描述
+      parameters:
+      - description: Some ID
+        in: path
+        name: some_id
+        type: string
+      - description: Offset
+        in: query
+        name: offset
+        required: true
+        type: integer
+      - description: Offset
+        in: query
+        name: limit
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+        "400":
+          description: We need ID!!
+          schema:
+            type: string
+        "404":
+          description: Can not find ID
+          schema:
+            type: string
+swagger: "2.0"
